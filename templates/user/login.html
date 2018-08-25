@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <form method="POST" action="/user/login/" accept-charset="UTF-8" class="form-horizontal" role="form">
+
+        {% csrf_token %}
+
+        <!-- User Field -->
+        <div class="form-group">
+            <label for="text" class="col-sm-3 control-label">用户名</label>
+            <div class="col-sm-6">
+                <input class="form-control" type="text" name="username">
+            </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">密码</label>
+            <div class="col-sm-6">
+                <input class="form-control" name="password" type="password" value="" id="password">
+
+                <span class="text-danger">
+                {{ error }}
+            </span>
+            </div>
+        </div>
+
+        <!-- Log In! Field -->
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-5">
+                <input class="btn btn-primary" type="submit" value="登陆">
+            </div>
+        </div>
+{% endblock %}

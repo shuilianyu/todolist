@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>watch</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#wth{
+			background-color: black;
+			color: white;
+			width: 500px;
+			height: 70px;
+			font-size: 20px;
+			margin: auto;
+			margin-top: 150px;
+			border-radius: 10px;
+			text-align: center;
+			padding-top:40px;
+			border:1px solid white;
+		}
+		#todolist{
+			width: 150px;
+			height: 50px;
+			font-size: 30px;
+			margin-left: 10%;
+			margin-top: 10px;
+		}
+		#todo{
+			font-size: 30px;
+			padding-left: 25px;
+			line-height: 50px;
+			color: white;
+			text-decoration: none;
+
+		}
+		#login1{
+			width: 150px;
+			height: 50px;
+			font-size: 30px;
+			margin-left: 70%;
+			margin-top: 30px;
+		}
+		#login{
+			font-size: 30px;
+			padding-left: 25px;
+			line-height: 50px;
+			color: white;
+			text-decoration: none;
+
+		}
+		#register1{
+			width: 150px;
+			height: 50px;
+			font-size: 30px;
+			margin-left: 85%;
+			margin-top: -50px;
+		}
+		#register{
+			font-size: 30px;
+			padding-left: 25px;
+			line-height: 50px;
+			color: white;
+			text-decoration: none;
+
+		}
+
+	</style>
+</head>
+<body bgcolor="black">
+	<div id='login1'><a href="/user/login" id="login">login</a></div>
+	<div id='register1'><a href="/user/register" id="register">register</a></div>
+	<div id='todolist'><a href="/task/task_list" id="todo">todolist</a></div>
+	<div id="wth">0000年00月00日&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp00：00：00</div>
+	<script type="text/javascript">
+		function time(){
+			var site=document.getElementById("wth")
+			var box=new Date();
+			var y=box.getFullYear();
+			var m=box.getMonth();
+			var d=box.getDate();
+			var H=box.getHours();
+			var M=box.getMinutes();
+			var S=box.getSeconds();
+			if(m<10){
+				 m="0"+(m+1)
+			}
+			if(d<10){
+				 d="0"+d
+			}
+			if(H<10){
+				 H="0"+H
+			}
+			if(M<10){
+				 M="0"+M
+			}
+			if(S<10){
+				 S="0"+S
+			}
+
+			site.innerHTML=y+"年"+m+"月"+d+'日'+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+H+':'+M+":"+S
+		}
+		var a=setInterval(time,1000);
+	</script>
+
+</body>
+</html>

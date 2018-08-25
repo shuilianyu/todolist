@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    {#<form action="/user/register/" method="post">#}
+    {##}
+    {#    <input type="text" name="username">{{ username_error }}<br>#}
+    {#    <input type="password" name="password1">{{ password_error }}<br>#}
+    {#    <input type="password" name="password2">#}
+    {#    <input type="submit" value="register">#}
+    {#    {% csrf_token %}#}
+    {#</form>#}
+    <form method="POST" action="/user/register/" accept-charset="UTF-8" class="form-horizontal" role="form"><input
+            name="_token" type="hidden" value="gc0r8anuV85AoiYksmD7DR5SjJHTqbe8UHOjGBZk">
+
+
+        <!-- User Field -->
+        <div class="form-group">
+
+            <label for="text" class="col-sm-3 control-label">用户名</label>
+            <div class="col-sm-6">
+
+                <input class="form-control" type="text" name="username">
+                <span class="text-danger">
+                {{ username_error }}
+                </span>
+            </div>
+        </div>
+
+        <!-- Password1 Field -->
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">密码</label>
+            <div class="col-sm-6">
+                <input class="form-control" name="password1" type="password" value="" id="password1">
+
+                <span class="text-danger">
+                {{ password_error1 }}
+            </span>
+            </div>
+        </div>
+
+
+        <!-- Password2 Field -->
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">密码</label>
+            <div class="col-sm-6">
+                <input class="form-control" name="password2" type="password" value="" id="password2">
+                <span class="text-danger">
+                {{ password_error2 }}
+                </span>
+
+            </div>
+        </div>
+
+
+        <!-- Log In! Field -->
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-5">
+                <input class="btn btn-primary" type="submit" value="注册">
+            </div>
+        </div>
+        {% csrf_token %}
+    </form>
+    <hr>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todolist</title>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/jquery.min.js' %}">
+    <link rel="stylesheet" href="{% static 'js/bootstrap.min.js' %}">
+    <style>
+        #test{
+            margin-left: 350px;
+        }
+        #test1{
+            margin-right:50px ;
+        }
+        #tip{
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% include 'parts/navbar.html' %}
+        {% block content %}
+        {% endblock %}
+
+
+    </div>
+    {% include 'parts/footer.html' %}
+</body>
+</html>

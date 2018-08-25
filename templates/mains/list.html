@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>是否完成</th>
+                <th>操作</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.title }}</td>
+
+
+                    {% if task.completed %}
+                        <td>
+                            <form action="/task/task_detail/{{ task.id }}/?X-Method-Override=PUT" method="post">
+                                {% csrf_token %}
+                                <input class="btn-success" type="submit" value="completed">
+                            </form>
+                        </td>
+                    {% else %}
+                        <td>
+                            <form action="/task/task_detail/{{ task.id }}/?X-Method-Override=PUT" method="post">
+                                {% csrf_token %}
+                                <input class="btn-primary" type="submit" value="completing">
+                            </form>
+                        </td>
+                    {% endif %}
+                    <td>
+                        <form action="/task/task_detail/{{ task.id }}/?X-Method-Override=DELETE" method="post">
+                            {% csrf_token %}
+                            <input class="btn-danger" type="submit" value="delete">
+                        </form>
+                    </td>
+                </tr>
+
+
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    <div id="tip">
+    {{ msg }}
+    </div>
+{% endblock %}
