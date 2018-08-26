@@ -2,33 +2,30 @@
 
 1.下载
   使用git下载：git clone https://github.com/shuilianyu/todolist.git
-  
-  
-  
-2.配置MySQL数据库
-  使用mysql数据库，在mysql数据库中创建一个database todolist
-  并使用utf8的字符集
-  之后在项目中todolist/settings.py中配置DATABASES
-  添加USER与PASSWORD
-  
-  
-  
-  
-3.配置环境
-  pip install -r requirements.txt
-  ps:python 3.6.4
-      django 1.11
-      
-      
-      
-      
-      
-4.测试项目
-  python manage.py runserver
 
-  
-    
-    
+2.配置MySQL数据库
+
+  使用mysql数据库，在mysql数据库中创建一个database todolist
+
+ 并使用utf8的字符集
+
+ 之后在项目中todolist/settings.py中配置DATABASES
+
+添加USER与PASSWORD
+
+
+3.配置环境
+```python
+pip install -r requirements.txt
+```
+>使用python版本 python 3.6.4   使用的django版本 django 1.11
+
+
+
+4.测试项目
+  python manage.py runserver   
+
+
 ps:结构框架
 ```├── manage.py
 ├── README.md
@@ -72,3 +69,4 @@ ps:结构框架
 └── utils
     ├── decorators.py
     └── __pycache__
+```
