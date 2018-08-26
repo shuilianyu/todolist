@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 from django.views import View
 from django.contrib.auth import login,logout,authenticate
-from django.http import HttpResponse
 from django.contrib.auth.models import User
 
 
@@ -49,7 +48,8 @@ class user_login(View):
             login(req,user=user)
             return redirect('/task/task_list/')
         else:
-            return HttpResponse('用户名或者密码错误')
+            # return HttpResponse('用户名或者密码错误')
+            return render(req,'user/login.html',{'error':'用户名或者密码错误'})
 
 
 def user_logout(req):
